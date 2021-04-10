@@ -1,0 +1,67 @@
+\documentclass{beamer}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\sisetup{locale = DE}
+% Lade Beamer Stile
+\usepackage{beamerthemesplit}
+\usepackage{tcolorbox}
+\usetheme{Rochester}
+\usecolortheme{crane}
+
+
+\title{Unterrichtseinheit zur Federkraft}
+\subtitle{Das Hook'sche\footnote{Robert Hook, engl. Physiker (1635 bis 1703)}  Gesetz}
+\author{Heiko Schröter}
+\date{\today}
+
+\setbeamertemplate{enumerate item}{\alph{enumi})}
+
+\begin{document}
+
+\frame{
+\frametitle{Beispielaufgabe 2}
+\uncover<1->
+{
+\textbf{Aufgabe:}\\
+Die Federkonstante einer Schraubenfeder beträgt $\SI{15}{\frac{\newton}{\meter}}$. Wie groß ist die Verkürzung der Feder, wenn sie mit
+\begin{itemize}
+\item [a)] $\SI{1.5}{\newton}$
+\item [b)] $\SI{5}{\newton}$
+\end{itemize}
+zusammengedrückt wird?\\
+}
+\uncover<2->
+{
+\textbf{Lösung:}\\
+\begin{itemize}
+\item [a)] \begin{align*}
+c=\dfrac{F}{\Delta s}\Rightarrow \Delta s=\dfrac{F}{c}=\dfrac{\SI{1.5}{\newton}}{\SI{15}{\frac{\newton}{\meter}}}=\SI{0.1}{m}
+\end{align*}
+\item [b)]\begin{align*}
+c=\dfrac{F}{\Delta s}\Rightarrow \Delta s=\dfrac{F}{c}=\dfrac{\SI{5}{\newton}}{\SI{15}{\frac{\newton}{\meter}}}=\SI{0.333}{m}
+\end{align*}
+\end{itemize}
+}
+}
+\frame{
+\frametitle{Beispielaufgabe 3}
+\uncover<1->
+{
+\textbf{Aufgabe:}\\
+Eine Feder wird durch Anhängen eines Körpers A um $\SI{100}{\milli\meter}$, durch Anhängen eines Körpers B um $\SI{40}{\milli\meter}$ verlängert. Der Körper B zieht mit der Kraft $\SI{2}{\newton}$. Mit welcher Kraft zieht der Körper A an der Feder?\\
+}
+\uncover<2->
+{
+\textbf{Lösung:}\\
+\begin{align*}
+c=\dfrac{F}{\Delta s}=\dfrac{\SI{2.0}{\newton}}{\SI{40}{\milli\meter}}=\SI{50}{\frac{\newton}{\meter}}\\
+c=\dfrac{F}{\Delta s}\Rightarrow F=c\cdot\Delta s=\SI{50}{\frac{\newton}{\meter}}\cdot\SI{100}{\milli\meter}=\SI{50}{\frac{\newton}{\meter}}\cdot\SI{0,1}{\meter}=\SI{5.0}{\newton}
+\end{align*}
+}
+}
+\end{document}

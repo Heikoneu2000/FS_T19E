@@ -1,0 +1,139 @@
+\documentclass[10pt]{beamer}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\begin{document}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{frame}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[
+x=1.0cm,y=1.0cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-11.0,
+xmax=11.0,
+ymin=-11.0,
+ymax=11.0,
+xtick={-10.0,-8.0,...,10.0},
+ytick={-10.0,-8.0,...,10.0},]
+\clip(-11.,-11.) rectangle (11.,11.);
+\onslide<7->{
+  \fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0.,-10.) -- (0.,10.) -- (4.956675142461258,8.68512357609877) -- cycle;
+}
+\onslide<14->{
+  \draw [shift={(0.,0.)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (60.28622338215053:2.0966094713375485) arc (60.28622338215053:90.:2.0966094713375485) -- cycle;
+}
+\onslide<17->{
+  \draw[line width=2.pt,color=qqqqff,fill=qqqqff,fill opacity=0.10000000149011612] (3.8819515112558896,8.970219678680905) -- (3.596855408673753,7.895496047475538) -- (4.671579039879121,7.610399944893402) -- (4.956675142461258,8.68512357609877) -- cycle; 
+}
+\onslide<4->{
+  \draw [line width=2.pt] (0.,0.) circle (10.cm);
+}
+\onslide<7->{
+  \draw [line width=2.pt,color=zzttqq] (0.,-10.)-- (0.,10.);
+}
+\onslide<7->{
+  \draw [line width=2.pt,color=zzttqq] (0.,10.)-- (4.956675142461258,8.68512357609877);
+}
+\onslide<7->{
+  \draw [line width=2.pt,color=zzttqq] (4.956675142461258,8.68512357609877)-- (0.,-10.);
+}
+\onslide<8->{
+  \draw [line width=2.pt,domain=-11.:11.] plot(\x,{(-173.70247152197538-0.*\x)/-20.});
+}
+\onslide<10->{
+  \draw [line width=2.pt,domain=-11.:11.] plot(\x,{(-200.-0.*\x)/-20.});
+}
+\onslide<11->{
+  \draw [line width=2.pt] (4.956675142461258,-11.) -- (4.956675142461258,11.);
+}
+\onslide<13->{
+  \draw [line width=2.pt] (0.,0.)-- (4.956675142461258,8.68512357609877);
+}
+\onslide<16->{
+  \draw [->,line width=2.pt] (0.,0.) -- (8.765205257886253,4.813644854694122);
+}
+\onslide<20->{
+  \draw (-2.303394707353732,9.9048034794853) node[anchor=north west] {$\overline{DA} = s$};
+}
+\begin{scriptsize}
+\onslide<2->{
+  \draw [fill=uuuuuu] (0.,0.) circle (2.0pt);
+}
+\onslide<2->{
+  \draw[color=uuuuuu] (0.18632903985960672,0.4307494308787839) node {$M$};
+}
+\onslide<3->{
+  \draw [fill=xdxdff] (0.,-10.) circle (2.5pt);
+}
+\onslide<3->{
+  \draw[color=xdxdff] (0.18632903985960672,-9.52814555797454) node {$E$};
+}
+\onslide<4->{
+  \draw[color=black] (-4.924156546525667,8.214412093219408) node {$c$};
+}
+\onslide<5->{
+  \draw [fill=uuuuuu] (0.,10.) circle (2.0pt);
+}
+\onslide<5->{
+  \draw[color=uuuuuu] (0.18632903985960672,10.442059656515546) node {$A$};
+}
+\onslide<6->{
+  \draw [fill=xdxdff] (4.956675142461258,8.68512357609877) circle (2.5pt);
+}
+\onslide<6->{
+  \draw[color=xdxdff] (5.139568915894565,9.157886355321303) node {$C$};
+}
+\onslide<7->{
+  \draw[color=zzttqq] (0.4746128421685196,0.24729610213674902) node {$b$};
+}
+\onslide<7->{
+  \draw[color=zzttqq] (2.4401842215474714,9.184093973713022) node {$e$};
+}
+\onslide<7->{
+  \draw[color=zzttqq] (2.125692800846839,-0.3030638840893557) node {$a$};
+}
+\onslide<8->{
+  \draw[color=black] (-10.978116395012838,8.502695895528321) node {$f$};
+}
+\onslide<9->{
+  \draw [fill=uuuuuu] (0.,8.68512357609877) circle (2.0pt);
+}
+\onslide<9->{
+  \draw[color=uuuuuu] (0.18632903985960672,9.105471118537864) node {$D$};
+}
+\onslide<10->{
+  \draw[color=black] (-10.978116395012838,9.813076815114284) node {$g$};
+}
+\onslide<11->{
+  \draw[color=black] (5.244399389461443,17.1774175831874) node {$h$};
+}
+\onslide<12->{
+  \draw [fill=uuuuuu] (4.956675142461258,10.) circle (2.0pt);
+}
+\onslide<12->{
+  \draw[color=uuuuuu] (5.139568915894565,10.442059656515546) node {$B$};
+}
+\onslide<13->{
+  \draw[color=black] (2.9119213525984198,4.361892189636675) node {$i$};
+}
+\onslide<14->{
+  \draw[color=qqwuqq] (1.4705023410538551,1.29560083780552) node {$\varphi = 29.71\textrm{\degre}$};
+}
+\onslide<16->{
+  \draw[color=black] (4.405755600926423,2.73701984935008) node {$r$};
+}
+\onslide<19->{
+  \draw [fill=uuuuuu] (0.,9.342561788049384) circle (2.0pt);
+}
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+\end{document}
