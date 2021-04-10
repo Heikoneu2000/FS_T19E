@@ -1,0 +1,65 @@
+\documentclass{beamer}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace} 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{eurosym}
+\sisetup{locale = DE}
+\sisetup{per-mode=fraction}
+% Lade Beamer Stile
+\usepackage{beamerthemesplit}
+\usetheme{Rochester}
+\usecolortheme{crane}
+\setbeamercolor{bgcolor}{fg=black,bg=green!15!white}
+\title{Übungsaufgabe Riesenrad}
+\subtitle{Kräfte bei Drehbewegung}
+\author{Heiko Schröter}
+\date{\today}
+
+\setbeamertemplate{enumerate item}{\alph{enumi})}
+\newtheorem{satz}{Satz}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame
+{
+  \frametitle{Aufgabe}
+Ein Riesenrad hat einen Durchmesser von $\SI{12}{\meter}$ und dreht sich in der Minute 4 mal. Das Gewicht einer Kabine beträgt bei voller Besetzung $F_G=\SI{3000}{\newton}$. Berechnen Sie
+\begin{enumerate}
+\item die Umfangsgeschwindigkeit $v_u$ in \si{\frac{\meter}{\second}} für $d=\SI{12}{\meter}$,
+\item die Winkelgeschwindigkeit $\omega$,
+\item die auf die Kabine wirkende Fliehkraft $F_Z$, wenn der Kabinenschwerpunkt auf $d=\SI{12}{\meter}$ liegt,
+\item die nach unten wirkende Kraft der Kabine, wenn sich diese durch den untersten Punkt des umfahrenen Kreises bewegt.
+\end{enumerate}
+}
+
+\frame[allowframebreaks]
+{
+  \frametitle{Lösung}
+\begin{enumerate}
+\item
+	\begin{align*}
+	v_u&=\dfrac{d\cdot\pi\cdot n}{60}=\dfrac{\SI{12}{\meter}\cdot\pi\cdot 4}{\SI{60}{\second}}=\SI{2,513}{\frac{\meter}{\second}}\\
+	\end{align*}
+\item 
+	\begin{align*}
+	\omega&=\dfrac{\pi\cdot n}{30}=\dfrac{\pi\cdot 4}{30}\si{\radian\per\second}=\SI{0,4189}{\radian\per\second}\\
+	\end{align*}
+\item 
+	\begin{align*}
+	F_Z&=m\cdot r\cdot\omega^{2}=\dfrac{F_G}{g}\cdot r\cdot\omega^{2}=\dfrac{\SI{3000}{\newton}}{\SI{9,81}{\meter\per\square\second}}\cdot \SI{6}{\meter}\cdot(\SI{0,4189}{\per\second})^{2}\\
+	&=\SI{322}{\newton}\\
+	\end{align*}
+\item 
+	\begin{align*}
+	F_r=F_Z+F_G=\SI{322}{\newton}+\SI{3000}{\newton}=\SI{3322}{\newton}
+	\end{align*}
+\end{enumerate}
+}
+
+\end{document}
