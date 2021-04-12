@@ -73,7 +73,7 @@ Die genannte Gleichung $W=F\cdot s$ gilt nur, wenn die Kraft $F$ entlang des Weg
   \textbf{Beispiel:} Welche mechanische Arbeit (Hubarbeit) wird beim anheben einer Palette mit $\SI{1520}{\kilo\gram}$ auf die Höhe der Ladefläche eines Lastwagens von $\SI{1,20}{\meter}$ verrichtet?\\
   \textbf{Lösung:}
   \begin{align*}
-  W_H&=m\cdot g\cdot h=\SI{1520}{\kilo\gram}\cdot \SI{9,81}{\meter\square\second}\cdot \SI{1,20}{\meter}\\
+  W_H&=m\cdot g\cdot h=\SI{1520}{\kilo\gram}\cdot \SI{9,81}{\meter\per\square\second}\cdot \SI{1,20}{\meter}\\
   &=\SI{17893}{\newton\meter}=\SI{17,9}{\kilo\joule}
   \end{align*}
 }
@@ -94,9 +94,9 @@ Die genannte Gleichung $W=F\cdot s$ gilt nur, wenn die Kraft $F$ entlang des Weg
   \frametitle{Arten mechanischer Arbeit}
   \begin{block}{Beschleunigungsarbeit}
 	\begin{align}
-	W_B=F_B\cdot s=m\cdot a\cdot s\\
-	W_B=m\cdot\dfrac{(a\cdot t)^{2}}{2}\\
-	W_B=\dfrac{1}{2}\cdot m\cdot v^{2}
+	W_B&=F_B\cdot s=m\cdot a\cdot s\quad | \text{mit}\quad s=\left(\frac{a}{2}\right)\cdot t^{2}\curvearrowright\\
+	W_B&=m\cdot\dfrac{(a\cdot t)^{2}}{2}\quad | \text{und}\quad a=v\cdot t\curvearrowright\\
+	W_B&=\dfrac{1}{2}\cdot m\cdot v^{2}
 	\end{align}
   \end{block}
   \textbf{Beschleunigungsarbeit.} Um einen Körper längs eines Weges $s$ konstant zu beschleunigen, muss nach dem Grundgesetz der Dynamik die Kraft $F_B$ wirken.
@@ -107,10 +107,58 @@ Die genannte Gleichung $W=F\cdot s$ gilt nur, wenn die Kraft $F$ entlang des Weg
   \frametitle{Arten mechanischer Arbeit}
   \begin{block}{Spannarbeit}
 	\begin{align}
-	W_S=\dfrac{(F\cdot s)}{2}=\dfrac{1}{2}\cdot D\cdot s^{2}\\
+	W_S&=\dfrac{(F\cdot s)}{2}\quad | \text{mit}\quad F=D\cdot s\curvearrowright\\
+	W_S&=\dfrac{1}{2}\cdot D\cdot s^{2}
 	\end{align}
   \end{block}
   \textbf{Spannarbeit.} Beim spannen einer Feder nimmt die Kraft $F$ mit zunehmender Dehnung $s$ der Feder proportional zu. Im F-s-Diagramm erhält man eine aus dem Ursprung ansteigende Gerade. Die Arbeit $W_s$, die beim Spannen der Feder verrichtet wird, ergibt sich aus der Dreiecksfläche unter der F-Linie im F-s-Diagramm.
+}
+
+\frame
+{
+  \frametitle{Elastische Dehnung einer Schraubenfeder}
+  \begin{tikzpicture}
+    \begin{axis}[
+	%axis x line=center,
+	height=6cm,
+	width=\textwidth,
+	compat=newest,
+	title=Kraft-Verlängerungs-Diagramm,
+	xlabel=Verlängerung $\Delta s$,
+	ylabel=Kraft $F$,
+	xmin=0, xmax=0.35,
+	ymin=0, ymax=1.2,
+	xticklabel style={
+		/pgf/number format/fixed,
+		/pgf/number format/precision=3,
+		rotate=-30
+		},
+	xtick={0.033,0.067,0.101,0.134,0.199,0.267,0.330},
+ 	enlargelimits=false,
+    grid = major,
+]
+	\addplot [color=red, very thick, mark=x, domain=0:0.3] coordinates {
+	(0,0)
+    (0.033,0.10)
+    (0.067,0.20)
+    (0.101,0.30)
+    (0.134,0.40)
+    (0.199,0.60)
+    (0.267,0.80)
+    (0.330,1.00)
+	};
+	\fill[fill=red!20]
+	    (0.002,0)
+	 -- (0.33,0)
+	 -- (0.33,0.99);
+	%\draw[help lines, dashed] {(axis cs:0.033,0) -- (axis cs:0.033,0.1)
+	%(axis cs:0.067,0) -- (axis cs:0.067,0.2)};
+	%\coordinate (A) at ({axis cs:0.033,0});
+    %\coordinate (B) at ({axis cs:0.067,0});
+   \end{axis}
+   %\node[pin={below:0.033}] at (A) {};
+   %\node[pin={below:0.067}] at (B) {};
+  \end{tikzpicture}
 }
 
 \frame[allowframebreaks]
@@ -144,7 +192,7 @@ Auch beim Spannen einer Feder bleibt die geleistete Spannarbeit $W_S$ als potent
   \item
   \begin{align*}
   E_{pot}=W_S=\dfrac{1}{2}\cdot D\cdot s^{2}\Rightarrow s&=\sqrt{\dfrac{2\cdot E_{pot}}{D}}\\
-  &=\sqrt{\dfrac{2\cdot \SI{3,8}{\joule}}{\SI{5000}{\newton\per\meter}}}\\
+  &=\sqrt{\dfrac{2\cdot \SI{3,8}{\newton\meter}}{\SI{5000}{\newton\per\meter}}}\\
   &=\SI{0,039}{\meter}=\SI{3,9}{\centi\meter}
   \end{align*}
   \item
@@ -251,8 +299,19 @@ Durch eine mechanische Hilfe, ein Bauteil oder eine Maschine kann keine Arbeit g
   \frametitle{Leistung}
 \begin{block}{Definition}
 Die Leistung $P$ ist der Quotient aus der verrichteten Arbeit $W$ und der dazugehörigen Zeit $t$.\\
-$P=\dfrac{W}{t}$
+\begin{align}
+P=\dfrac{\Delta W}{\Delta t}&=\dfrac{F_s\cdot s}{t}=F_s\cdot v\\
+\text{bei Drehbewegung:}\quad P&=M\cdot\omega
+\end{align}
 \end{block}
+\begin{figure}
+\begin{tabular}{l l l l}
+P & Leistung & v & Geschwindigkeit \\ 
+W & Arbeit & M & Drehmoment \\ 
+t & Zeit & $\omega$ & Winkelgeschwindigkeit \\ 
+$F_s$ & Kraft in Wegrichtung & s & Weg \\ 
+\end{tabular}
+\end{figure}
 Die SI-Einheit der Leistung $P$ ergibt sich aus der Einheitengleichung zu \si{\newton\meter\per\second} oder \si{\joule\per\second}. Sie wird \textbf{Watt}\footnote{James Watt: englischer Physiker (1736 bis 1819}  (Einheitszeichen $W$) genannt. 
 	\begin{tcolorbox}	  
 	  $[P]=\dfrac{[W]}{[t]}=\dfrac{\SI{1}{\newton\meter}}{\SI{1}{\second}}=\SI{1}{\joule\per\second}=\SI{1}{\watt}$ (Watt)
@@ -264,7 +323,7 @@ Die SI-Einheit der Leistung $P$ ergibt sich aus der Einheitengleichung zu \si{\n
   \frametitle{Übungsaufgabeaufgabe Arbeit}
 \uncover<1->
 {
-Bei einem Wasserkraftwerk werden tagsüber \SI{100000}{\cubic\meter} Wasser dem oberen Rückhaltebecken entnommen. Dabei wird den Turbinen eine Arbeit von \SI{40000}{\kilo\watt\hour} zugeführt. Wie groß ist die Fallhöhe ($g=\SI{9,81}{\meter\per\square\second}$, Strömungsverluste bleiben unberücksichtigt)?\\
+Bei einem Wasserkraftwerk werden tagsüber \SI{100000}{\cubic\meter} ($\varrho=\SI{1000}{\kilogram\per\cubic\meter}$) Wasser dem oberen Rückhaltebecken entnommen. Dabei wird den Turbinen eine Arbeit von \SI{40000}{\kilo\watt\hour} zugeführt. Wie groß ist die Fallhöhe ($g=\SI{9,81}{\meter\per\square\second}$, Strömungsverluste bleiben unberücksichtigt)?\\
 }
 \uncover<2->
 {
