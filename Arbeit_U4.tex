@@ -22,8 +22,6 @@ per-mode=fraction}
 \author{Heiko Schröter}
 \date{\today}
 
-\setbeamertemplate{enumerate item}{\alph{enumi})}
-
 \begin{document}
 
 \frame{\titlepage}
@@ -60,6 +58,36 @@ $[W]=[F]\cdot[s]=\SI{1}{\newton\meter}=\SI{1}{\joule}$
 	  \caption{Verrichten mechanischer Arbeit}
    \end{figure}
 Die genannte Gleichung $W=F\cdot s$ gilt nur, wenn die Kraft $F$ entlang des Weges $s$ konstant bleibt.
+}
+
+\frame
+{
+  \frametitle{Kraft Weg Diagramm}
+  \begin{tikzpicture}
+    \begin{axis}[
+	%axis x line=center,
+	height=6cm,
+	width=\textwidth,
+	compat=newest,
+	title=Kraft-Weg-Diagramm,
+	xlabel=Weg $s\rightarrow$,
+	ylabel=Kraft $F\rightarrow$,
+	xmin=0, xmax=10,
+	ymin=0, ymax=6,
+	xticklabels={},
+	yticklabels={},
+ 	enlargelimits=false,
+ 	minor tick num=5,
+    grid = both,
+]
+	\draw [thick, red] (0,4.02) -- (10,4.02);
+	\fill[fill=red!20]
+		(0.02,0.02)
+	 -- (6,0.02)
+	 -- (6,4)
+	 -- (0.02,4);
+   \end{axis}
+  \end{tikzpicture}
 }
 
 \frame
@@ -184,11 +212,13 @@ Auch beim Spannen einer Feder bleibt die geleistete Spannarbeit $W_S$ als potent
   \end{block}
   \textbf{Beispiel:} Die in einem Ventil eingebaute Rückstellfeder mit der Federkonstante $D=\SI{5000}{\newton\per\meter}$ ist mit der Energie $E_{pot}=\SI{3,8}{\joule}$ gespannt.\\
   \begin{enumerate}
+  \setbeamertemplate{enumerate item}{\alph{enumi})}
   	\item Wie groß ist der Federweg $s$, um den die Feder zusammengedrückt ist?
   	\item Wie groß ist die dazu aufzuwendende Spannkraft?
-  \end{enumerate}
+  \end{enumerate}\newpage
   \textbf{Lösung:}
   \begin{enumerate}
+  \setbeamertemplate{enumerate item}{\alph{enumi})}
   \item
   \begin{align*}
   E_{pot}=W_S=\dfrac{1}{2}\cdot D\cdot s^{2}\Rightarrow s&=\sqrt{\dfrac{2\cdot E_{pot}}{D}}\\
@@ -213,12 +243,14 @@ Lässt man einen Körper frei fallen, so erfährt er durch seine Gewichtskraft e
 }
   \textbf{Beispiel:} Ein Gefahrguttransporter mit einer Masse von \SI{38}{\tonne} fährt auf der Autobahn mit der überhöhten Geschwindigkeit von \SI{108}{\kilo\meter\per\hour}.\\
   \begin{enumerate}
+  \setbeamertemplate{enumerate item}{\alph{enumi})}
   	\item Berechnen Sie die kinetische Energie $E_{kin}$ des Lastzuges.?
   	\item Mit welcher Geschwindigkeit $v$ fährt der Gefahrguttransporter, wenn seine kinetische Energie $E_{kin}$ durch bremsen halbiert wurde?
   \end{enumerate}
   \newpage
   \textbf{Lösung:}
   \begin{enumerate}
+  \setbeamertemplate{enumerate item}{\alph{enumi})}
   \item
   \begin{align*}
 	E_{kin}&=\dfrac{1}{2}\cdot m\cdot v^{2}=\dfrac{\SI{38000}{\kilo\gram}\cdot \left(\dfrac{108}{3,6}\dfrac{\si{\meter}}{\si{\second}}\right)^{2}}{2}\\
@@ -367,4 +399,22 @@ Ein Elektroauto muss eine Reibungskraft von \SI{400}{\newton} überwinden und so
 	\end{align*}
 }
 }
+
+\frame
+{
+  \frametitle{Fragen zur heutigen Unterrichtseinheit}
+  \textbf{Mechanische Arbeit}
+  \begin{enumerate}
+  \setbeamertemplate{enumerate item}[default]
+  % \setbeamertemplate{enumerate item}{\alph{enumi})}
+	\item Wie ist die mechanische Arbeit definiert?
+	\item Welche Formen mechanischer Energie werden unterschieden?
+	\item Weshalb haben die mechanische Arbeit und die Energie dieselbe SI-Einheit?
+	\item Was besagt der Energieerhaltungssatz der Mechanik?
+	\item Wie lautet die goldene Regel der Mechanik?
+	\item Wozu verwendet man einen Hebel?
+	\item Wie ist die Leistung $P$ definiert?
+  \end{enumerate}
+}
+
 \end{document}
