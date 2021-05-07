@@ -15,7 +15,7 @@
 	\usepackage{siunitx}
 	\sisetup{locale = DE,
 	per-mode=fraction}
-	\usetikzlibrary{arrows,patterns}
+	\usetikzlibrary{decorations.pathmorphing, arrows, patterns}
 	\usepackage{biblatex}
 	\usepackage{xltabular}
 	\addbibresource{Schallgeschwindigkeit.bib}
@@ -68,7 +68,7 @@
 	\usepackage{tcolorbox}
 	\usetheme{Rochester}
 	\usecolortheme{crane}
-	\usetikzlibrary{arrows,patterns}
+	\usetikzlibrary{decorations.pathmorphing, arrows, patterns}
 \fi
 
 \title{4. Unterrichtseinheit zur Dynamik}
@@ -77,7 +77,17 @@
 \date{\today}
 
 \begin{document}
-
+\tikzset{mystripes dist/.initial=0.25}
+\pgfdeclarepatternformonly[/tikz/mystripes dist]{mystripes}
+{\pgfpointorigin}{\pgfpoint{1cm}{1cm}}
+{\pgfpoint{1cm}{1cm}}
+{
+  \foreach \x in {0,\pgfkeysvalueof{/tikz/mystripes dist},...,1}{
+    \pgfmathsetmacro{\nx}{1-\x}
+    \tikz[overlay]\draw[decoration = {random steps, segment length = 0.5mm, amplitude = 0.15pt}, decorate] (\x, 0) -- ++(\nx,\nx);
+    \tikz[overlay]\draw[decoration = {random steps, segment length = 0.5mm, amplitude = 0.15pt}, decorate] (0, \x) -- ++(\nx,\nx);
+  }
+}
 \frame{\titlepage}
 
 \frame
@@ -326,8 +336,36 @@ $E_{Ges}=E_{pot}+E_{kin}=$konstant
 \end{block}
 
     \begin{figure}
-	  \includegraphics[width=0.5\textwidth]{Energieformen}
-	  \vspace{-3mm}
+\begin{tikzpicture}[roundnode/.style={circle, draw=green!60, fill=green!5, thick, minimum size=5mm}, line cap=round,line join=round, scale=0.35]
+\filldraw[line width=1.pt,color=black,fill=black,fill opacity=0.1] (0.,-1) -- (10.,-1) -- (10.,1.) -- (0.,1.) -- cycle;
+\fill[line width=1.pt, pattern=mystripes, xshift=0cm, mystripes dist=0.5] (-1,-1.5) -- (19,-1.5) -- (19,-1) -- (-1,-1) -- cycle;
+\draw[line width=1.pt] (-1,-1) -- (19,-1);
+\node (black) at (5,0) {Stahlplatte};
+\shadedraw [inner color=black!20!white, outer color=black!50!white, draw=black] (8.,2.) circle (1.cm);
+\draw [line width=0.5pt, dash dot] (6.5,2) -- (9.5,2);
+\draw [line width=0.5pt, dash dot] (8,0.5) -- (8,3.5);
+\node [roundnode] (uppercircle) at (4.5,2) {2};
+\node at (4.5,3.5) {Position};
+\node at (16,1) {$E_{pot}=0$, $E_{kin}=m\cdot g\cdot h$};
+\shadedraw [inner color=black!20!white, outer color=black!50!white, draw=black] (8.,8.) circle (1.cm);
+\draw [line width=0.5pt, dash dot] (6.5,8) -- (9.5,8);
+\draw [line width=0.5pt, dash dot] (8,6.5) -- (8,9.5);
+\node [roundnode] (uppercircle) at (4.5,8) {1};
+\node at (4.5,9.5) {Position};
+\node at (16,7.5) {$E_{pot}=m\cdot g\cdot h_1$};
+\node at (16,6.0) {$E_{kin}=m\cdot g\left(h-h_1\right)$};
+\shadedraw [inner color=black!20!white, outer color=black!50!white, draw=black] (8.,14.) circle (1.cm);
+\draw [line width=0.5pt, dash dot] (6.5,14) -- (9.5,14);
+\draw [line width=0.5pt, dash dot] (8,12.5) -- (8,15.5);
+\node [roundnode] (uppercircle) at (4.5,14) {0};
+\node at (4.5,15.5) {Position};
+\node at (16,13) {$E_{pot}=m\cdot g\cdot h$, $E_{kin}=0$};
+\draw [line width=0.5pt] (8.5,14.5) -- (9.5,15.5) node [right] {Stahlkugel};
+\draw [line width=0.25pt] (0.5,13) -- (8,13);
+\draw [line width=0.25pt] (2,7) -- (8,7);
+\draw [latex-latex, line width=0.25pt] (0.75,1) -- (0.75,13) node[pos=0.5,left] {$h$};
+\draw [latex-latex, line width=0.25pt] (2.25,1) -- (2.25,7) node[pos=0.5,left] {$h_1$};
+\end{tikzpicture}
 	  \caption{Umwandlung der Energieformen beim Fallen}
    \end{figure}
 
