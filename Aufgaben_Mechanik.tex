@@ -1,0 +1,118 @@
+\documentclass[12pt,oneside]{scrartcl}
+\usepackage[a4paper, left=2.5cm, right=2cm, top=5.5cm, bottom=2.5cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\sisetup{locale = DE}
+\newcommand{\phyphox}{\textit{phyphox} }
+\usepackage{biblatex}
+\usepackage{xltabular}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\addbibresource{Schallgeschwindigkeit.bib}
+\usepackage{scrlayer-scrpage}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\DeclareNewLayer[%
+  background,% Hintergrundebene
+  width=\textwidth,% Größe und Position des Textbereichs
+  hoffset=2.5cm,
+  voffset=2.5cm,
+  align=tl,
+  contents={%
+  \sffamily
+    \setlength{\fboxsep}{2mm}% Abstand Box Text
+    \setlength{\fboxrule}{.5mm}% Dicke Linie
+    % vertikale Position korrigieren    
+    \vskip-\fboxsep\vskip-\fboxrule\vskip-\baselineskip
+    % horizontale Position korrigieren
+    \hspace{-\fboxsep}\hspace{-\fboxrule}%
+        
+    \begin{tabularx}{\textwidth}{|>{\bfseries\Large}C{7cm}|X|X|}                                                       
+\hline
+\vspace{0em}\includegraphics[scale=0.3]{logo2.png} & Name: & Datum: \\
+\hline
+
+\end{tabularx}
+    %\makebox[\layerwidth][l]{%
+    %  \fbox{\rule{0pt}{\layerheight}\rule{\layerwidth}{0pt}}% Rahmen
+    %}%
+  }
+]{frame}
+\AddLayersToPageStyle{@everystyle@}{frame}
+
+\begin{document}
+\sffamily
+
+\title{Mechanik}
+\subtitle{Übungsaufgaben zur Arbeit, Leistung, Impuls und Stoß}
+\date{}
+\maketitle
+
+\section{Aufgabe (Arbeit)}
+	Ein Monteur besteigt einen Freileitungsmast und wendet dabei eine Kraft von \SI{750}{\newton} auf. Welche Arbeit vollbringt er bei einer Steighöhe von \SI{12}{\meter}?\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,3);
+	\end{tikzpicture}
+	
+\section{Aufgabe (Arbeit)}
+	Ein Lastenaufzug bewegt eine Masse von \SI{3500}{\kilogram} um \SI{18}{\meter} nach unten. Berechnen Sie die vom Aufzug aufgenommene Arbeit ($g\approx\SI{10}{\newton\per\kilogram}$).\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,3);
+	\end{tikzpicture}
+
+\section{Aufgabe (Leistung)}
+	Ein Güterzug mit 55 Wagen zu je \SI{20}{\tonne} soll in \SI{8}{\minute} eine Steigung mit \SI{225}{\meter} Höhenunterschied hinaufgezogen werden. Reibungswiderstand und Luftwiderstand bleiben unberücksichtigt, $g\approx\SI{10}{\newton\per\kilogram}$. Berechnen Sie:
+	\begin{enumerate}
+	\item die Arbeit,
+	\item die Leistung.
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,4);
+	\end{tikzpicture}
+
+\section{Aufgabe (Leistung)}
+	Ein Wasserkraftwerk hat die Fallhöhe von \SI{12}{\meter} bei einem Wasserstrom von \SI{60}{\cubic\meter\per\second}. Wie groß ist die Leistungsaufnahme der Turbine ($g=\SI{9,81}{\newton\per\kilogram}$)?\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,3);
+	\end{tikzpicture}
+	
+\section{Aufgabe (Kraftstoß)}
+	Ein PKW mit der Masse \SI{1400}{\kilogram} und der Geschwindigkeit \SI{36}{\kilo\meter\per\hour} erhält von einem von hinten auffahrenden Wagen einen Kraftstoß \SI{2400}{\newton\second}.
+	\begin{enumerate}
+	\item Wie groß ist seine Geschwindigkeit unmittelbar nach dem Unfall?
+	\item Welchen Kraftstoß erfuhr ein Insasse mit der Masse \SI{70}{\kilogram}?
+	\item Welche Welche Kraft wirkte auf das Fahrzeug, wenn es \SI{0,5}{\second} lang beschleunigt worden ist?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,5);
+	\end{tikzpicture}
+	
+\section{Aufgabe (Impuls)}
+	Ein Eisenbahnwagen mit der Masse \SI{10}{\tonne} rollt mit einer Geschwindigkeit \SI{1,6}{\meter\per\second} gegen einen Prellbock, von dem er nach \SI{0,4}{\second} gleich schnell zurückprallt. Wie groß sind
+	\begin{enumerate}
+	\item die Impulsänderung,
+	\item der Kraftstoß,
+	\item die mittlere Kraft auf den Wagen bzw. auf den Prellbock?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,5);
+	\end{tikzpicture}
+	
+\section{Aufgabe (Impuls)}
+	Ein Hammer (Masse \SI{0,2}{\kilogram}) trifft mit der Geschwindigkeit \SI{8}{\meter\per\second} einen Nagel, der \SI{5}{\milli\second} lang in das Holz getrieben wird. Wie groß sind
+	\begin{enumerate}
+	\item die Impulsänderung des Hammers,
+	\item der Kraftstoß auf den Hammer,
+	\item die Kraft auf den Nagel?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (16.5,5);
+	\end{tikzpicture}
+		
+\end{document}

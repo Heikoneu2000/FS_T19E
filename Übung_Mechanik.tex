@@ -1,0 +1,213 @@
+\documentclass[a4paper]{scrartcl}
+\usepackage[
+    typ=ueb,
+    klausurtyp=kurs,
+    klasse=scrartcl,
+    fach=LF05 Physik,
+    lerngruppe=T19E,
+    loesungen=seite,
+    module={Symbole,Bewertung}    
+    %erwartungshorizontAnzeigen,
+    %erwartungshorizontStil=simpel,
+hHh]{schule}
+% Dieses Dokument gehört zu den Beispiel des LaTeX Paketes Schule und ist von den Autoren
+% des Pakets erstellt worden.
+%
+% Das Dokument steht unter der Lizenz: Creative Commons by-nc-sa Version 4.0
+% http://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
+%
+% Nach dieser Lizenz darf das Dokument beliebig kopiert und bearbeitet werden,
+% sofern das Folgeprodukt wiederum unter gleichen Lizenzbedingungen vertrieben
+% und auf die ursprÃ¼nglichen Urheber verwiesen wird.
+% Eine kommerzielle Nutzung ist ausdrÃ¼cklich ausgeschlossen.
+
+\author{Heiko Schröter}
+\date{\today}
+\title{Mechanik\\
+(Arbeit, Leistung, Impuls und Stoß)}
+\subtitle{Übungsaufgaben zur Arbeit, Leistung, Impuls und Stoß}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{mathrsfs}
+\usepackage{xfrac}
+\usepackage{siunitx}
+%\sisetup{quotient-mode = fraction, locale = DE}
+\sisetup{per-mode = fraction, locale = DE}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\newcommand{\Ergebnis}[1]{\underline{\underline{#1}}}
+
+\begin{document}
+%\punktuebersicht*
+
+\setzeAufgabentemplate{schule-keinepunkte}  
+\begin{aufgabe}[points={3}]
+	Ein Monteur besteigt einen Freileitungsmast und wendet dabei eine Kraft von \SI{750}{\newton} auf. Welche Arbeit vollbringt er bei einer Steighöhe von \SI{12}{\meter}?\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,3);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+		\begin{flalign*}
+		&W=F_S\cdot s=\SI{750}{\newton}\cdot \SI{12}{\meter}=\Ergebnis{\SI{9000}{\newton\meter}}&
+		\end{flalign*}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={3}]
+	Ein Lastenaufzug bewegt eine Masse von \SI{3500}{\kilogram} um \SI{18}{\meter} nach unten. Berechnen Sie die vom Aufzug aufgenommene Arbeit ($g\approx\SI{10}{\newton\per\kilogram}$).\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,3);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+		\begin{flalign*}
+		&W=F_S\cdot s=m\cdot g\cdot s\approx\SI{3500}{\kilogram}\cdot\SI{10}{\newton\per\kilogram}\cdot\SI{18}{\meter}=\Ergebnis{\SI{630}{\kilo\joule}}&
+		\end{flalign*}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={6}]
+	Ein Güterzug mit \num{55} Wagen zu je \SI{20}{\tonne} soll in \SI{8}{\minute} eine Steigung mit \SI{225}{\meter} Höhenunterschied hinaufgezogen werden. Reibungswiderstand und Luftwiderstand bleiben unberücksichtigt, $g\approx\SI{10}{\newton\per\kilogram}$. Berechnen Sie:
+	\begin{enumerate}[label=(\alph*)]
+	\item die Arbeit,
+	\item die Leistung.
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,6);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+    \begin{enumerate}[label=(\alph*)]
+    \item    
+		\begin{flalign*}
+		&W=F_S\cdot s\approx\num{55}\cdot\SI{20}{\mega\gram}\cdot\SI{10}{\newton\per\kilogram}\cdot\SI{225}{\meter}=\Ergebnis{\SI{2475}{\mega\newton\meter}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&P=\dfrac{\Delta W}{\Delta t}=\dfrac{\SI{2475}{\mega\newton\meter}}{\SI{8}{\minute}}=\dfrac{\SI{2475}{\mega\newton\meter}}{\SI{480}{\second}}=\Ergebnis{\SI{5,156}{\mega\watt}}&
+		\end{flalign*}	
+	\end{enumerate}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={3}]
+	Ein Wasserkraftwerk hat die Fallhöhe von \SI{12}{\meter} bei einem Wasserstrom von \SI{60}{\cubic\meter\per\second}. Wie groß ist die Leistungsaufnahme der Turbine ($g=\SI{9,81}{\newton\per\kilogram}$)?\\
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,4);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+		\begin{flalign*}
+		&P=\dfrac{F_s\cdot s}{t}=\dfrac{F_s}{t}\cdot s=\dfrac{\SI{60000}{\kilogram}}{\SI{1}{\second}}\cdot\SI{9,81}{\newton\per\kilogram}\cdot\SI{12}{\meter}=\SI{7063200}{\newton\meter\per\second}=\Ergebnis{\SI{7,063}{\mega\watt}}&
+		\end{flalign*}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={6}]
+	Ein PKW mit der Masse \SI{1400}{\kilogram} und der Geschwindigkeit \SI{36}{\kilo\meter\per\hour} erhält von einem von hinten auffahrenden Wagen einen Kraftstoß \SI{2400}{\newton\second}.
+	\begin{enumerate}[label=(\alph*)]
+	\item Wie groß ist seine Geschwindigkeit unmittelbar nach dem Unfall?
+	\item Welchen Kraftstoß erfuhr ein Insasse mit der Masse \SI{70}{\kilogram}?
+	\item Welche Welche Kraft wirkte auf das Fahrzeug, wenn es \SI{0,5}{\second} lang beschleunigt worden ist?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,8);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+    \begin{flalign*}
+    &v_v=\SI{36}{\kilo\meter\per\hour}=\SI{10}{\meter\per\second}&
+    \end{flalign*}
+    \begin{enumerate}[label=(\alph*)]
+	\item
+		\begin{flalign*}
+		&F\cdot \Delta t=m\cdot v_n-m\cdot v_v=m\cdot(v_n-v_v)\Rightarrow\\
+		&v_n-v_v=F\cdot\dfrac{\Delta t}{m}=\dfrac{\SI{2400}{\newton\second}}{\SI{1400}{\kilogram}}=\SI{1,71}{\meter\per\second}\Rightarrow\\
+		&v_n=v_v+\SI{1,71}{\meter\per\second}=\SI{10}{\meter\per\second}+\SI{1,71}{\meter\per\second}=\SI{11,71}{\meter\per\second}=\Ergebnis{\SI{42,2}{\kilo\meter\per\hour}}&
+		\end{flalign*}
+	\item    
+		\begin{flalign*}
+		&F\cdot\Delta t=m\cdot(v_2-v_v)=\SI{70}{\kilogram}\cdot\SI{1,71}{\meter\per\second}=\Ergebnis{\SI{119,7}{\newton\second}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&F=a\cdot m=\dfrac{v_n-v_v}{\Delta t}\cdot m=\dfrac{\SI{1,71}{\meter\per\second}}{\SI{0,5}{\second}}\cdot \SI{1400}{\kilogram}=\Ergebnis{\SI{4800}{\newton}}\\
+		&\text{oder}\quad F=\dfrac{F\cdot\Delta t}{\Delta t}=\dfrac{\SI{2400}{\newton\second}}{\SI{0,5}{\second}}=\Ergebnis{\SI{4800}{\newton}}&
+		\end{flalign*}	
+	\end{enumerate}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={6}]
+	Ein Eisenbahnwagen mit der Masse \SI{10}{\tonne} rollt mit einer Geschwindigkeit \SI{1,6}{\meter\per\second} gegen einen Prellbock, von dem er nach \SI{0,4}{\second} gleich schnell zurückprallt. Wie groß sind
+	\begin{enumerate}[label=(\alph*)]
+	\item die Impulsänderung,
+	\item der Kraftstoß,
+	\item die mittlere Kraft auf den Wagen bzw. auf den Prellbock?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,7);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+        \begin{flalign*}
+    &v_v=\SI{1,6}{\meter\per\second};\quad v_n=-\SI{1,6}{\meter\per\second};\quad v_n-v_v=-\SI{3,2}{\meter\per\second}&
+    	\end{flalign*}
+    \begin{enumerate}[label=(\alph*)]
+    \item    
+		\begin{flalign*}
+		&\Delta p=m\cdot(v_n-v_v)=\SI{10000}{\kilogram}\cdot (-\SI{3,2}{\meter\per\second})=\Ergebnis{-\SI{32000}{\kilogram\meter\per\second}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&F\cdot\Delta t=\Delta p=-\SI{32000}{\kilogram\meter\per\second}=\Ergebnis{-\SI{32000}{\newton\second}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&\text{Wagen:}\quad F_W=\dfrac{F\cdot \Delta t}{\Delta t}=\dfrac{-\SI{32000}{\newton\second}}{\SI{0,4}{\second}}=\Ergebnis{-\SI{80000}{\newton}}\\
+		&\text{Prellbock:}\quad F_P=\Ergebnis{+\SI{80000}{\newton}}&
+		\end{flalign*}	
+	\end{enumerate}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+\begin{aufgabe}[points={6}]
+	Ein Hammer (Masse \SI{0,2}{\kilogram}) trifft mit der Geschwindigkeit \SI{8}{\meter\per\second} einen Nagel, der \SI{5}{\milli\second} lang in das Holz getrieben wird. Wie groß sind
+	\begin{enumerate}[label=(\alph*)]
+	\item die Impulsänderung des Hammers,
+	\item der Kraftstoß auf den Hammer,
+	\item die Kraft auf den Nagel?
+	\end{enumerate}
+	\begin{tikzpicture}
+		\draw[step=0.5cm,gray,very thin] (0,0) grid (15,6);
+	\end{tikzpicture}
+	
+    \begin{loesung}
+    \begin{enumerate}[label=(\alph*)]
+    \item    
+		\begin{flalign*}
+		&\Delta p=m\cdot v_n-m\cdot v_v=m\cdot (v_n-v_v)=\SI{0,2}{\kilogram}\cdot (0-\SI{8}{\meter\per\second})=\Ergebnis{-\SI{1,6}{\kilogram\meter\per\second}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&F\cdot\Delta t=\Delta p=-\SI{1,6}{\kilogram\meter\per\second}=\Ergebnis{-\SI{1,6}{\newton\second}}&
+		\end{flalign*}
+	\item
+		\begin{flalign*}
+		&\text{Nagel:}\quad F_N\cdot\Delta t=+\SI{1,6}{\newton\second}\Rightarrow \quad F_N=\dfrac{+\SI{1,6}{\newton\second}}{\SI{5}{\milli\second}}=\Ergebnis{\SI{320}{\newton}}&
+		\end{flalign*}	
+	\end{enumerate}
+    \end{loesung}
+\end{aufgabe}
+\vspace{0.3cm}
+
+%{\large Viel Erfolg! \symDaumenHoch} 
+\end{document}
